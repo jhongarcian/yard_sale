@@ -34,12 +34,17 @@
             display: grid;
             grid-template-rows: auto 1fr auto;
             width: 300px;
+            height: 100%;
         }
         .p1 {
             font-weight: bold;
             margin-bottom: 40px;
         }
         .form {
+            display: flex;
+            flex-direction: column;
+        }
+        .form div {
             display: flex;
             flex-direction: column;
         }
@@ -74,15 +79,18 @@
             margin-bottom: 30px;
         }
         .input-password {
-            margin-bottom: 20px;
+            margin-bottom: 10%;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
         }
        
         @media (max-width: 640px) {
             .logo {
                 display: block;
             }
-            .input-password {
-                margin-bottom: 100%;
+            .form {
+                justify-content: space-between;
             }
         }
 
@@ -92,18 +100,20 @@
 <body>
     <div class="login">
         <div class="form-container">
-            <p class="p1">My account</p>
+            <p class="p1">Create a new password</p>
             <form action="/" class="form">
-                <label for="name" class="label">Name</label>
-                <!-- Name -->
-                <input type="text" id="name" placeholder="Camila Yokoo" class="input input-name">
-
-                <label for="email" class="label">Email address</address></label>
-                <!-- email -->
-                <input type="text" id="email" placeholder="camilayokoo@gmail.com" class="input input-email">
-                <!-- pass -->
-                <label for="password" class="label">Password</label>
-                <input type="password" id="new-password" placeholder="*******" class="input input-password">
+                <div>
+                    <label for="name" class="label">Name</label>
+                    <!-- Name -->
+                    <input type="text" id="name" placeholder="Camila Yokoo" class="input input-name">
+    
+                    <label for="email" class="label">Email address</address></label>
+                    <!-- email -->
+                    <input type="text" id="email" placeholder="camilayokoo@gmail.com" class="input input-email">
+                    <!-- pass -->
+                    <label for="password" class="label">Password</label>
+                    <input type="password" id="new-password" placeholder="*******" class="input input-password">
+                </div>
                 <!-- save -->
                 <input type="submit" value="Create" class="primary-button save-button">
             </form>
