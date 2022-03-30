@@ -29,7 +29,13 @@
             width: 100%;
             height: 100vh;
             display: grid;
-            justify-items: center;
+            grid-template-rows: auto 1fr;
+            justify-items: end;
+        }
+        .product-info {
+            display: grid;
+            grid-template-rows: 0.1fr auto;
+            width: 350px ;
         }
         .img-container figure {
             position: absolute;
@@ -41,54 +47,118 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            margin: 16px;
-            display: none;
-            
+            margin: 16px;  
         }
         .close-icon {
             width: 14px;
         }
         .product-pic {
+            display: flex;
             width: 350px;
             height: 350px;
             object-fit: cover;
             border-radius: 0 0 24px 24px;
             position: relative;
         }
+        .dots ul {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            padding: 0;
+        }
+        .dots ul div {
+            background-color: var(--text-input-field);
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+        .dots ul div:nth-child(1) {
+            background-color: var(--very-light-pink);
+        }
+        .info-container {
+            color: var(--very-light-pink);
+            font-size: var(--sm);
+            margin: 12px;
+            display: grid;
+            grid-template-rows: 0.5fr 0.1fr;
+            align-content: space-between;
+        }
+        .product-price {
+            color: var(--black) !important;
+            font-weight: bold;
+            font-size: var(--lg);
+            margin: 8px 0 0 0;
+        }
+        .title {
+            font-size: var(--md);
+            margin-top: 5px;
+        }
+        .primary-button {
+            background-color: var(--hospital-green);
+            border-radius: 8px;
+            border: none;
+            color: var(--white);
+            width: 100%;
+            cursor: pointer;
+            font-size: var(--md);
+            font-weight: bold;
+            height: 40px;
+            display: flex ;  
+            justify-content: center;
+            align-items: center;
+        }
+        .primary-button figure{
+            margin: 0 4px 0 0;
+            -webkit-filter: grayscale(1) invert(1);
+            filter: grayscale(1) invert(1);
+        }
+        @media (max-width: 640px) {
+            .product-pic {
+                width: 100%;
+            }
+            .main-container {
+                justify-items: center;
+            }
+        }
+
     </style>
 </head>
 <body>
     <div class="main-container">
+        <div class="img-container">
+            <figure>
+                <img src="./Icons/Platzi_YardSale_Icons/icon_close.png" alt="close" class="close-icon">
+            </figure>
+            <img src="https://images.pexels.com/photos/209861/pexels-photo-209861.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="product" class="product-pic">
+        </div>  
         <div class="product-info">
-            <div class="img-container">
-                <figure>
-                    <img src="./Icons/Platzi_YardSale_Icons/icon_close.png" alt="close" class="close-icon">
-                </figure>
-                <img src="https://images.pexels.com/photos/209861/pexels-photo-209861.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="product" class="product-pic">
-                
-            </div>  
             <div class="dots">
                 <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                    <div class="action-1"></div>
+                    <div class="action-2"></div>
+                    <div class="action-3"></div>
                 </ul>
             </div>
-            <p class="product-price">
-                $120,00
-            </p>
-            <h1 class="title">
-                Soccer Ball
-            </h1>
-            <p class="text-info">
-                Amazing world cup ball singed by Ronaldhino
-            </p>
-            <button class="primary-button">
-                <figure>
-                    <img src="./Icons/Platzi_YardSale_Icons/icon_shopping_cart.svg" alt="">
-                </figure>
-                Add to cart
-            </button>
+            <div class="info-container">
+                <div>
+                    <p class="product-price">
+                        $120,00
+                    </p>
+                    <h1 class="title">
+                        Soccer Ball
+                    </h1>
+                    <p class="text-info">
+                        Amazing world cup ball singed by Ronaldhino porque cada vez que veo queiro jugar mas estoi es muy divertido
+                    </p>
+                </div>
+                <button class="primary-button">
+                    <figure>
+                        <img src="./Icons/Platzi_YardSale_Icons/icon_shopping_cart.svg" alt="">
+                    </figure>
+                    Add to cart
+                </button>
+            </div>
+            
         </div>
     </div>
 </body>
